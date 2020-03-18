@@ -40,7 +40,6 @@ INSTALLED_APPS = (
     # 'allauth.socialaccount.providers.linkedin',
     # etc
     "allauthdemo.auth",
-    "allauthdemo.demo",
     "allauthdemo.debtors",
 )
 
