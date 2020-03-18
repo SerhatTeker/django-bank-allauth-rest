@@ -1,12 +1,43 @@
+# Envs
+.secret.env
+
+# Python
+.venv/
 *.pyc
-*.tmp
-*.swp
+*/settings_*.py
+mypy*
+
+# DB
 *.db
 *.sqlite3
-*/settings_*.py
+*.sql
+
+# Vim template
+## Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+
+# Temporary
+.netrwhist
+*.tmp
+
+# Auto-generated tag files
+tags
+
+# VisualStudioCode template
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Others
 *.iml
 .idea
 DEL
-*.sql
 *.bak
-mypy*
