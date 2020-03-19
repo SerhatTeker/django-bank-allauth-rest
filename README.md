@@ -166,39 +166,11 @@ The django-allauth library covers [many others providers][allauth-providers].
    In development I change the domain to `127.0.0.1` and the name to `<project name> (Dev)`.
 
 
----
+## Authors
+* [Serhat Teker](https://github.com/serhatteker)
 
-## Notes
-
-### Make the repo yours
-
-If you've got the site up and want to use it as the basis for your own real site,
-here's what I do:
-
-- Remove all the git history:
-
-        rm -rf .git/
-
-  and start a new history:
-
-        git init
-
-- Remove unnecessary files:
-
-        rm LICENSE README.md config/settings.template.py configure.py
-
-- Rename the `"allauthdemo"` directory to something more appropriate
-
-- Optionally rename the class `auth.models.User` to something more specific.
-  You'll need to rebuild the database (I suggest you do this after you've built the
-  initial app and renamed things anyway). Don't leave this too late as trying to
-  migrate the `User` class to a new name doesn't work nicely when you've got real data.
-
-- Check the `auth.models.UserProfile` class. The draft one includes date-of-birth (`dob`),
-  which you might want to remove.
-
-- Change settings so Postgres or another full database is used, not sqlite (which is
-  awesome, but not right for a real project!)
+## Code of Conduct
+This repo uses same code as [Django Code of Conduct](https://www.djangoproject.com/conduct/) based on the [Open Code of Conduct](https://github.com/todogroup/opencodeofconduct).
 
 
 ## License
