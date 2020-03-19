@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
 # Django Bank Allauth REST
 A simple CRUD REST app to manage borrowers, their bank account data (IBAN) and
 invoices.
@@ -197,6 +199,11 @@ here's what I do:
 
 - Change settings so Postgres or another full database is used, not sqlite (which is
   awesome, but not right for a real project!)
+
+
+## License
+This work is licensed under a BSD 3-Clause "New" or "Revised" License. See the
+[LICENSE](./LICENSE) for details.
 
 
 ### Credits
