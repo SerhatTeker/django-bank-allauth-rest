@@ -172,15 +172,15 @@ __Get Borrowers__:
 All borrowers:
 
 ```http
-GET /debtors/
+GET /borrowers/
 ```
 
 Single borrower:
 ```http
-PUT /debtors/{id}/
+PUT /borrowers/{id}/
 ```
 
-schema:
+Schema:
 ```
   id
   email
@@ -206,7 +206,7 @@ Single invoice:
 GET /invoices/{id}/
 ```
 
-schema:
+Schema:
 ```
   id
   status

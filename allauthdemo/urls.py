@@ -26,7 +26,7 @@ urlpatterns = [
     # Usual Django admin
     url(r'^admin/', admin.site.urls),
 
-    # Debtors
-    path('', include('allauthdemo.debtors.urls')),
+    # Borrowers
+    path('', include('allauthdemo.borrowers.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

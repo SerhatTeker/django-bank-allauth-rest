@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     # 'allauth.socialaccount.providers.linkedin',
     # etc
     "allauthdemo.auth",
-    "allauthdemo.debtors",
+    "allauthdemo.borrowers",
 )
 
 MIDDLEWARE = [

@@ -10,8 +10,8 @@ from .querysets import DebtorQuerySet
 
 User = get_user_model()
 
-        
-class Debtor(models.Model):
+
+class Borrowers(models.Model):
     first_name = models.CharField(max_length=30, blank=False)
     last_name = models.CharField(max_length=30, blank=False)
     email = models.EmailField(blank=False)
@@ -45,12 +45,11 @@ class Invoice(models.Model):
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default=OPEN, blank=False)
     amount = models.DecimalField(max_digits=10, decimal_places=2, blank=False)
     due_date = models.DateField(blank=False)
-    
-    debtor = models.ForeignKey(Debtor, on_delete=models.CASCADE, related_name='invoices')
+
+    borrower = models.ForeignKey(Borrower, on_delete=models.CASCADE, related_name='invoices')
 
     def is_created_by_admin(self, admin):
         return self.debtor.admin_creator == admin
 
     def __str__(self):
-        return f'Amount: {self.amount} Debtor: {self.debtor.first_name}'
-    
+        return f'Amount: {self.amount} Borrower: {self.borrower.first_name}'
