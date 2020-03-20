@@ -27,6 +27,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # Borrowers
-    path('', include('allauthdemo.borrowers.urls')),
+    path('', include('src.borrowers.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

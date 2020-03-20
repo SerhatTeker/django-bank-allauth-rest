@@ -107,7 +107,7 @@ The django-allauth library covers [many others providers][allauth-providers].
    A specific `makemigrations` is needed for the `auth_user` table:
 
     ```bash
-    $ python manage.py makemigrations allauthdemo_auth
+    $ python manage.py makemigrations src_auth
     ```
 
 4. Build the database schema:

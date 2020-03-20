@@ -1,13 +1,3 @@
-"""
-Django settings for allauthdemo project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
-"""
-
 from os.path import dirname, join
 
 
@@ -54,8 +44,8 @@ INSTALLED_APPS = (
     # etc
 {% endif %}
 
-    'allauthdemo.auth',
-    'allauthdemo.demo',
+    'src.auth',
+    'src.demo',
 )
 
 MIDDLEWARE = [
@@ -68,9 +58,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'allauthdemo.urls'
+ROOT_URLCONF = 'src.urls'
 
-WSGI_APPLICATION = 'allauthdemo.wsgi.application'
+WSGI_APPLICATION = 'src.wsgi.application'
 
 
 # Database
@@ -117,10 +107,10 @@ TEMPLATES = [
         # project and tweak it according to your needs
         # join(PROJECT_ROOT, 'templates', 'uniform', 'allauth'),
         # example project specific templates
-        join(BASE_DIR, 'allauthdemo', 'templates', 'plain', 'example'),
-        #join(BASE_DIR, 'allauthdemo', 'templates', 'bootstrap', 'allauth'),
-        join(BASE_DIR, 'allauthdemo', 'templates', 'allauth'),
-        join(BASE_DIR, 'allauthdemo', 'templates'),
+        join(BASE_DIR, 'src', 'templates', 'plain', 'example'),
+        #join(BASE_DIR, 'src', 'templates', 'bootstrap', 'allauth'),
+        join(BASE_DIR, 'src', 'templates', 'allauth'),
+        join(BASE_DIR, 'src', 'templates'),
     ],
     'APP_DIRS': True,
     'OPTIONS': {
@@ -153,7 +143,7 @@ STATICFILES_DIRS = (
 )
 
 SITE_ID = 1
-AUTH_USER_MODEL = 'allauthdemo_auth.User'
+AUTH_USER_MODEL = 'src_auth.User'
 LOGIN_REDIRECT_URL = '/member/'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_USERNAME_REQUIRED = False
@@ -174,4 +164,3 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': { 'access_type': 'online' }
     },
 }
-

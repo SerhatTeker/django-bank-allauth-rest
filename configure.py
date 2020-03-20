@@ -40,7 +40,7 @@ from django.template import engines  # Django >= 1.11
 commands_template = engines['django'].from_string("""
 Run these commands:
 
-    python manage.py makemigrations allauthdemo_auth
+    python manage.py makemigrations src_auth
     python manage.py migrate
     python manage.py createsuperuser  # optional
     {% if facebook %}# Facebook
