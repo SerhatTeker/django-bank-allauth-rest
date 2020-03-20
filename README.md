@@ -165,6 +165,55 @@ The django-allauth library covers [many others providers][allauth-providers].
    You don't technically have to rename the site but the default "example.com" isn't very useful.
    In development I change the domain to `127.0.0.1` and the name to `<project name> (Dev)`.
 
+#### REST API
+
+__Get Borrowers__:
+
+All borrowers:
+
+```http
+GET /debtors/
+```
+
+Single borrower:
+```http
+PUT /debtors/{id}/
+```
+
+schema:
+```
+  id
+  email
+  first_name
+  last_name
+  email
+  iban
+  open_invoices_count
+  overdue_invoices_count
+  paid_invoices_count
+```
+
+
+__Get invoices__:
+
+All invoices:
+```http
+GET /invoices/
+```
+
+Single invoice:
+```http
+GET /invoices/{id}/
+```
+
+schema:
+```
+  id
+  status
+  amount
+  due_date
+  debtor_id
+```
 
 ## Authors
 * [Serhat Teker](https://github.com/serhatteker)
