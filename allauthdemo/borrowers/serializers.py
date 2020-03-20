@@ -1,23 +1,23 @@
 from rest_framework import serializers
 
-from .models import Borrowers
+from .models import Borrower
 from .models import Invoice
 
 
-class DebtorSerializer(serializers.ModelSerializer):
+class BorrowerSerializer(serializers.ModelSerializer):
     open_invoices_count = serializers.ReadOnlyField()
     overdue_invoices_count = serializers.ReadOnlyField()
     paid_invoices_count = serializers.ReadOnlyField()
 
     def create(self, validated_data):
         user = self.context["request"].user
-        instance = Borrowers(admin_creator=user, **validated_data)
+        instance = Borrower(admin_creator=user, **validated_data)
         instance.save()
 
         return instance
 
     class Meta:
-        model = Borrowers
+        model = Borrower
         fields = (
             "id",
             "first_name",

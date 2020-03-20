@@ -2,11 +2,11 @@ from django.urls import path, include
 
 from rest_framework import routers
 
-from .views import index_view, DebtorViewSet, InvoiceViewSet
+from .views import index_view, BorrowerViewSet, InvoiceViewSet
 
 
 router = routers.DefaultRouter()
-router.register('borrowers', DebtorViewSet, base_name='borrowers')
+router.register('borrowers', BorrowerViewSet, base_name='borrowers')
 router.register('invoices', InvoiceViewSet, base_name='invoices')
 
 

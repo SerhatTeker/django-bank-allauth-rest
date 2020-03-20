@@ -6,20 +6,20 @@ from django.utils.translation import ugettext_lazy as _
 
 from localflavor.generic.models import IBANField
 
-from .querysets import DebtorQuerySet
+from .querysets import BorrowerQuerySet
 
 User = get_user_model()
 
 
-class Borrowers(models.Model):
+class Borrower(models.Model):
     first_name = models.CharField(max_length=30, blank=False)
     last_name = models.CharField(max_length=30, blank=False)
     email = models.EmailField(blank=False)
     iban = IBANField()
 
-    admin_creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name='created_debtors')
+    admin_creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name='created_borrowers')
 
-    objects = DebtorQuerySet.as_manager()
+    objects = BorrowerQuerySet.as_manager()
 
     def is_created_by_admin(self, admin):
         return self.admin_creator == admin
@@ -49,7 +49,7 @@ class Invoice(models.Model):
     borrower = models.ForeignKey(Borrower, on_delete=models.CASCADE, related_name='invoices')
 
     def is_created_by_admin(self, admin):
-        return self.debtor.admin_creator == admin
+        return self.borrower.admin_creator == admin
 
     def __str__(self):
         return f'Amount: {self.amount} Borrower: {self.borrower.first_name}'
