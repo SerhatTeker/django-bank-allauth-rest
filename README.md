@@ -212,7 +212,7 @@ Schema:
   status
   amount
   due_date
-  debtor_id
+  borrower_id
 ```
 
 ## Authors
